@@ -110,3 +110,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+CSP_STYLE_SRC = ("'self'", "sha256-Y91aBggMuRk6lhHYHgyMyCt8ymwvPMRE2XUImNy8xRg=")
+INSTALLED_APPS += ['corsheaders']
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+CORS_ALLOW_ALL_ORIGINS = True

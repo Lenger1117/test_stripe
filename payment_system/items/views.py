@@ -16,11 +16,11 @@ def buy_item(request, id):
         payment_method_types=['card'],
         line_items=[{
             'price_data': {
-                'currency': 'rub',
+                'currency': 'usd',
                 'product_data': {
                     'name': item.name,
                 },
-                'unit_amount': int(item.price * 100),
+                'unit_amount': int(item.price * 100),  # Цена в центах
             },
             'quantity': 1,
         }],

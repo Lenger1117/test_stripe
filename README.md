@@ -27,7 +27,7 @@ http://test-stripe.zapto.org/item/1
 # Инструкции по установке локально:
 ### 1. Клонируйте проект:
 ```
-git clone https://github.com/Lenger1117/foodgram-project-react.git
+git clone https://github.com/Lenger1117/test_stripe
 ```
 ### 2. Установите и активируйте виртуальное окружение:
 ```

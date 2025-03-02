@@ -8,7 +8,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def item_detail(request, id):
     item = get_object_or_404(Item, id=id)
-    return render(request, 'items/item_detail.html', {'item': item})
+    context = {'item': item, 'STRIPE_PUBLIC_KEY': settings.STRIPE_PUBLIC_KEY}
+    return render(request, 'items/item_detail.html', context)
 
 def buy_item(request, id):
     item = get_object_or_404(Item, id=id)
@@ -20,7 +21,7 @@ def buy_item(request, id):
                 'product_data': {
                     'name': item.name,
                 },
-                'unit_amount': int(item.price * 100),  # Цена в центах
+                'unit_amount': int(item.price * 100),
             },
             'quantity': 1,
         }],
